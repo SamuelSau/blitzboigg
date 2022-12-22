@@ -13,7 +13,7 @@ function Summoners({ summonerName }) {
 				);
 				const data = await response.json();
 				setSummoners(data);
-        console.log(data)
+				console.log(data);
 			} catch (error) {
 				setError(error);
 			}
@@ -32,13 +32,19 @@ function Summoners({ summonerName }) {
 
 	return (
 		<div>
-			<h1>Summoners</h1>
-			{summoners.map((summoner) => (
-				<div key={summoner.rank}>
-					<h2>{summoner.name}</h2>
-					<p>Level: {summoner.level}</p>
+			{
+				<div>
+					<h2>Summoner name: {summoners.name}</h2>
+					<h2>Summoner level: {summoners.summonerLevel}</h2>
+					<p>Profile Icon: {summoners.profileIconId}</p>
+					<p>Queue Type: {summoners.queueType}</p>
+					<p>Tier: {summoners.tier}</p>
+					<p>Rank: {summoners.rank}</p>
+					<p>Wins: {summoners.wins}</p>
+					<p>Losses: {summoners.losses}</p>
+					
 				</div>
-			))}
+			}
 		</div>
 	);
 }
