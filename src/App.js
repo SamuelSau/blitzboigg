@@ -1,13 +1,31 @@
 import './index.css';
-import Summoners from './Summoners';
-import SearchBox from './Components/SearchBox';
+import { useState } from 'react';
+import SearchBar from './Components/SearchBar';
+import Summoners from './Components/Summoners';
 
 function App() {
-	const summonerName = 'Happy';
+	const [summonersData, setSummonersData] = useState(null);
+
+	const handleSubmit = (summonerName) => {
+		fetch(`http://localhost:3000/summoners/${summonerName}`, {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				setSummonersData(data);
+			})
+			.catch((error) => {
+				console.error(error);
+			});
+	};
+
 	return (
-		<div className='App'>
-			<Summoners summonerName={summonerName} />
-			<SearchBox />
+		<div>
+			<SearchBar onSubmit={handleSubmit} />
+			{summonersData ? <Summoners summonersData={summonersData} /> : null}
 		</div>
 	);
 }
