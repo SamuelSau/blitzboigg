@@ -2,6 +2,7 @@ import React from 'react';
 import RuneImage from './RuneImage';
 import ChampionImage from './ChampionImage';
 import ItemsImage from './ItemsImage';
+import SummonerSpellsImages from './SummonerSpellsImages';
 
 function Matches({ matchDetailsArray }) {
 	return (
@@ -40,6 +41,9 @@ function Matches({ matchDetailsArray }) {
 						<h2>
 							Secondary rune: <RuneImage runeId={match.secondaryRune} />
 						</h2>
+                        <h2>
+                        <SummonerSpellsImages summoner1Id={match.summoner1Id} summoner2Id={match.summoner2Id}/>
+                        </h2>
 						<p>Baron Kills: {match.baronKills}</p>
 						<p>Dragon Kills: {match.dragonKills}</p>
 						<p>Rift Herald Kills: {match.riftHeraldKills}</p>
