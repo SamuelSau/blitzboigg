@@ -1,6 +1,7 @@
 import React from 'react';
 import Matches from './Matches';
 import SummonerProfile from './SummonerProfile';
+import TierImage from './TierImage';
 
 function Summoners({ summonersData }) {
 	console.log(summonersData);
@@ -11,6 +12,7 @@ function Summoners({ summonersData }) {
 	return (
 		<div>
 			<SummonerProfile summonerData={summonersData} />
+			<TierImage tier={summonersData.tier} />
 			<Matches matchDetailsArray={summonersData.matchDetailsArray} />
 		</div>
 	);

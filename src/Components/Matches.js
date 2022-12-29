@@ -1,4 +1,5 @@
 import React from 'react';
+import RuneImage from './RuneImage'
 
 function Matches({ matchDetailsArray }) {
   return (
@@ -14,8 +15,8 @@ function Matches({ matchDetailsArray }) {
               <p>Assists: {match.assists}</p>
               <p>Total Damage Dealt to Champions: {match.totalDamageDealtToChampions}</p>
               <p>Total Minions Killed: {match.totalMinionsKilled}</p>
-              <p>Primary Rune: {match.primaryRune}</p>
-              <p>Secondary Rune: {match.secondaryRune}</p>
+              <h2>Primary rune: <RuneImage runeId={match.primaryRune} /></h2>
+      <h2>Secondary rune: <RuneImage runeId={match.secondaryRune} /></h2>
               <p>Baron Kills: {match.baronKills}</p>
               <p>Dragon Kills: {match.dragonKills}</p>
               <p>Rift Herald Kills: {match.riftHeraldKills}</p>
