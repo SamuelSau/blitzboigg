@@ -4,7 +4,7 @@ function SummonerProfile({ summonerData }) {
 	const profileIcon = summonerData.profileIconId;
 	const profileIconUrl = `https://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${profileIcon}.png`;
 	return (
-		<div style={{ backgroundColor: '#1f2937' }} className=' w-1/2 rounded-2xl text-white font-sans font-bold'>
+		<div style={{ backgroundColor: '#1f2937' }} className=' w-1/3 rounded-2xl mx-auto px-4 py-5 text-white font-sans font-bold'>
 			<div className='relative ml-10 '>
 				<img
 					className='h-24 w-24 rounded-full p-5'

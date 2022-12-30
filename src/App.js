@@ -22,11 +22,13 @@ function App() {
 			});
 	};
 
-	const profileIcon = summonersData?.profileIconId;
- 	const profileIconUrl = `https://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${profileIcon}.png`;
+	const profileIcon = summonersData ? summonersData.profileIconId : null;
+const profileIconUrl = profileIcon
+  ? `https://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${profileIcon}.png`
+  : null;
 
 	return (
-		<div className="bg-center bg-fixed blur-100 opacity-90" style={{ backgroundImage: `url(${profileIconUrl})` }}>
+		<div className="w-full h-full bg-center bg-fixed" style={{ backgroundImage: `url(${profileIconUrl})` }}>
 			<SearchBar onSubmit={handleSubmit} />
 			{summonersData ? <Summoners summonersData={summonersData} /> : null}
 		</div>

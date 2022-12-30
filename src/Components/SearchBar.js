@@ -8,7 +8,7 @@ function SearchBar({onSubmit}) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-1/2 mx-auto py-3 px-4 flex h-12">
+    <form onSubmit={handleSubmit} className="w-1/3 mx-auto my-0 m-10 py-3 flex">
       <label className="block font-bold text-xl mb-2 400 font-serif">
         <input
           className=" border rounded-l-full py-2 px-3 w-full text-black"
