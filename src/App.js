@@ -22,8 +22,11 @@ function App() {
 			});
 	};
 
+	const profileIcon = summonersData?.profileIconId;
+ 	const profileIconUrl = `https://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${profileIcon}.png`;
+
 	return (
-		<div className="bg-yellow-400">
+		<div className="bg-center bg-fixed blur-100 opacity-90" style={{ backgroundImage: `url(${profileIconUrl})` }}>
 			<SearchBar onSubmit={handleSubmit} />
 			{summonersData ? <Summoners summonersData={summonersData} /> : null}
 		</div>
