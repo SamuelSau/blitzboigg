@@ -23,7 +23,7 @@ function App() {
 	};
 
 	return (
-		<div>
+		<div className="bg-yellow-400">
 			<SearchBar onSubmit={handleSubmit} />
 			{summonersData ? <Summoners summonersData={summonersData} /> : null}
 		</div>
