@@ -6,16 +6,18 @@ import SummonerSpellsImages from './SummonerSpellsImages';
 
 function Matches({ matchDetailsArray }) {
 	return (
-		<div>
+		<div style={{ backgroundColor: '#1f2937' }} className='text-white p-4 mt-5 flex flex-col-reverse'>
 			{matchDetailsArray.map((match) => {
 				return (
 					<div key={match.gameCreation}>
-						<h2>Champion Name: {match.championName}</h2>
-						<h2>
-							Champion: <ChampionImage championName={match.championName} />
-						</h2>
+						<div>{match.championName}</div>
+						<div className="rounded-full">
+					<ChampionImage
+						championName={match.championName}
+					/>
+				</div>
 						<p>Champion Level: {match.champLevel}</p>
-						<p>Kills: {match.kills}</p>
+						<div>Kills: {match.kills}</div>
 						<p>Deaths: {match.deaths}</p>
 						<p>Assists: {match.assists}</p>
 						<p>
@@ -41,9 +43,12 @@ function Matches({ matchDetailsArray }) {
 						<h2>
 							Secondary rune: <RuneImage runeId={match.secondaryRune} />
 						</h2>
-                        <h2>
-                        <SummonerSpellsImages summoner1Id={match.summoner1Id} summoner2Id={match.summoner2Id}/>
-                        </h2>
+						<h2>
+							<SummonerSpellsImages
+								summoner1Id={match.summoner1Id}
+								summoner2Id={match.summoner2Id}
+							/>
+						</h2>
 						<p>Baron Kills: {match.baronKills}</p>
 						<p>Dragon Kills: {match.dragonKills}</p>
 						<p>Rift Herald Kills: {match.riftHeraldKills}</p>
