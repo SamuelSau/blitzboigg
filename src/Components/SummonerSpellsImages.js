@@ -23,7 +23,7 @@ function SummonerSpellsImages({ summoner1Id, summoner2Id }) {
 	const summonerSpell2 = summonerSpells[summoner2Id]
 
 	return (
-		<div>
+		<div className='h-8 w-8'>
 			<img
 				src={`http://ddragon.leagueoflegends.com/cdn/12.23.1/img/spell/${summonerSpell1}.png`}
 				alt='Summoner spell 1'

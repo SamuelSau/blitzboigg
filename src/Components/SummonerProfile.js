@@ -4,23 +4,30 @@ function SummonerProfile({ summonerData }) {
 	const profileIcon = summonerData.profileIconId;
 	const profileIconUrl = `https://ddragon.leagueoflegends.com/cdn/12.23.1/img/profileicon/${profileIcon}.png`;
 	return (
-		<div style={{ backgroundColor: '#1f2937' }} className=' w-1/3 rounded-2xl mx-auto px-4 py-5 text-white font-sans font-bold'>
-			<div className='relative ml-10 '>
+		<div
+			style={{ backgroundColor: '#1f2937' }}
+			className=' w-1/2 rounded-2xl mx-auto px-4 py-5 text-white font-sans'
+		>
+			<div className='m-10 absolute'>
 				<img
-					className='h-24 w-24 rounded-full p-5'
+					className='h-24 w-24 rounded-full p-5 mx-auto'
 					src={profileIconUrl}
 					alt={`Profile icon ${profileIcon}`}
 				/>
-				<h2 className='absolute bottom-0 left-0 m-2 font-bold text-sm'>
+				<div className='absolute bottom-0 right-0 m-3 font-bold bg-black rounded-full px-3 py-1 text-xs'>
 					{summonerData.summonerLevel}
-				</h2>
+				</div>
 			</div>
-			<h1 className='ml-10 flex'>{summonerData.name}</h1>
-			<p className='ml-10 flex'>{summonerData.queueType}</p>
-			<p className='ml-10 flex'>{summonerData.tier}</p>
-			<p className='ml-10 flex'>{summonerData.rank}</p>
-			<p className='ml-10 flex'>{summonerData.wins}W</p>
-			<p className='ml-10 flex'> {summonerData.losses}L</p>
+			<div className='text-right'>
+				<h1 className='text-lg'>{summonerData.name}</h1>
+				<p className=''>{summonerData.queueType}</p>
+				<p className=''>{summonerData.tier}</p>
+				<p className=''>{summonerData.rank}</p>
+				<div className='text-sm'>
+					<p className='bg-green'>{summonerData.wins}W</p>
+					<p className='bg-red'> {summonerData.losses}L</p>
+				</div>
+			</div>
 		</div>
 	);
 }

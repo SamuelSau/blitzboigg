@@ -41,7 +41,7 @@ function TierImage({ tier }) {
       image = null;
   }
 
-  return image ? <img src={image} alt={`Tier ${tier}`} /> : null;
+  return image ? <img src={image} alt={`Tier ${tier}`} /> : 'No Image';
 }
 
 export default TierImage;
