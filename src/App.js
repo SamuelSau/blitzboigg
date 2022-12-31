@@ -2,6 +2,7 @@ import './index.css';
 import { useState } from 'react';
 import SearchBar from './Components/SearchBar';
 import Summoners from './Components/Summoners';
+import Footer from './Components/Footer';
 
 function App() {
 	const [summonersData, setSummonersData] = useState(null);
@@ -28,13 +29,16 @@ function App() {
 		: null;
 
 	return (
-		<div
-			className='w-full h-full bg-center bg-fixed'
-			style={{ backgroundImage: `url(${profileIconUrl})` }}
-		>
-			<SearchBar onSubmit={handleSubmit} />
-			{summonersData ? <Summoners summonersData={summonersData} /> : null}
-		</div>
+		<>
+			<div className='bg-blue-400'>
+				<SearchBar onSubmit={handleSubmit} />
+			</div>
+			<div className='w-full h-full bg-center bg-fixed' style={{ backgroundImage: `url(${profileIconUrl})` }}>
+				{summonersData ? <Summoners summonersData={summonersData} /> : null}
+			</div>
+			<div><Footer /></div>
+		</>	
+		
 	);
 }
 

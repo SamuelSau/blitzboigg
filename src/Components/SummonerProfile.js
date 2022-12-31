@@ -6,9 +6,9 @@ function SummonerProfile({ summonerData }) {
 	return (
 		<div
 			style={{ backgroundColor: '#1f2937' }}
-			className=' w-1/2 rounded-2xl mx-auto px-4 py-5 text-white font-sans'
+			className=' w-1/3 rounded-2xl mx-auto px-4 py-5 text-white font-sans flex flex-col'
 		>
-			<div className='m-10 absolute'>
+			<div className='m-3 absolute'>
 				<img
 					className='h-24 w-24 rounded-full p-5 mx-auto'
 					src={profileIconUrl}

@@ -8,29 +8,31 @@ function Matches({ matchDetailsArray }) {
 	return (
 		<div
 			style={{ backgroundColor: '#1f2937' }}
-			className='text-white p-4 mt-5 flex flex-col text-xs mx-9 rounded-2xl'
+			className='text-gray-300 p-4 mt-5 flex flex-col text-2xl mx-9 rounded-2xl'
 		>
 			{matchDetailsArray.map((match) => {
 				return (
-					<div
-						key={match.gameCreation}
-						className='flex p-4 justify-start border-2 rounded-2xl m-2 lg:flex-row'
-					>
-						<div className='m-4 text-md font-bold'>
+					<div className='flex p-4 justify-start border-2 rounded-2xl m-2 lg:flex-row'>
+						<div className='m-5 text-md font-bold'>
 							{Math.floor(match.gameDuration / 60)} mins
 						</div>
-						<div>
-							<div className='absolute'>
-								<ChampionImage championName={match.championName} />
-							</div>
-							<div className=' bg-black rounded-full h-5 w-5 flex justify-center items-center absolute'>
-								{match.champLevel}
-							</div>
+						<div className='flex-col text-xs'>
+							<div className='mb-3'>{match.gameMode}</div>
+							<div className='mb-3'>{match.gameType}</div>
+							<div className='mb-3'>{match.role}</div>
 						</div>
-						<div className='flex m-3 text-md'>
-							<div className=''>{match.kills}/</div>
-							<div className=''>{match.deaths}/</div>
-							<div className=''>{match.assists}</div>
+						<div className='flex flex-col'>
+							<div>
+								<div className='absolute'>
+									<ChampionImage championName={match.championName} />
+								</div>
+								<div className=' bg-black rounded-full h-7 w-7 flex justify-center items-center absolute'>
+									{match.champLevel}
+								</div>
+							</div>
+							<div className='flex ml-14 my-5 text-lg justify-start align-top'>
+								{match.kills}/{match.deaths}/{match.assists}
+							</div>
 						</div>
 						<div className='w-4 h-4 flex flex-col'>
 							<div className=''>
@@ -59,27 +61,24 @@ function Matches({ matchDetailsArray }) {
 								item6={match.item6}
 							/>
 						</div>
-						<div className='flex justify-start align-text-bottom text-lg ml-80'>
+						<div className='flex justify-start align-text-bottom text-lg ml-64'>
 							<div className='mr-4'>
 								{match.totalDamageDealtToChampions} DMG
 							</div>
 							<div className='mr-4'>{match.totalMinionsKilled} CS</div>
-							<div className='mr-4'>Baron:{match.baronKills}</div>
-							<div className='mr-3'>Dragon:{match.dragonKills}</div>
-							<div className='mr-3'>
-								Rift Herald:{match.riftHeraldKills}
-							</div>
-							<div className='mr-3'>
-								Inhibitor:{match.inhibitorKills}
-							</div>
+							<div className='mr-4'>Baron: {match.baronKills}</div>
+							<div className='mr-3'>Dragon: {match.dragonKills}</div>
+							<div className='mr-3'>Rift Herald:{match.riftHeraldKills}</div>
+							<div className='mr-3'>Inhibitor: {match.inhibitorKills}</div>
 							<div className='mr-3'>Tower: {match.towerKills}</div>
-							<div
+							
+						</div>
+						<div
 								style={{ color: match.win ? 'green' : 'red' }}
-								className='text-lg font-bold ml-6'
+								className='text-2xl font-bold absolute'
 							>
 								{match.win ? 'Victory' : 'Defeat'}
 							</div>
-						</div>
 					</div>
 				);
 			})}
