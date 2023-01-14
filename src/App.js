@@ -8,7 +8,7 @@ function App() {
 	const [summonersData, setSummonersData] = useState(null);
 
 	const handleSubmit = (summonerName) => {
-		fetch(`http://localhost:3000/summoners/${summonerName}`, {
+		fetch(`https://blitzboiggbackend.herokuapp.com/summoners/${summonerName}`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
