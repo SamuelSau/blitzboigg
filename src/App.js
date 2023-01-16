@@ -9,10 +9,11 @@ function App() {
 
 	const handleSubmit = (summonerName) => {
 		fetch(`https://blitzboiggbackend.herokuapp.com`, {
-			method: 'GET',
+			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
+			body: JSON.stringify({ summonerName }),
 		})
 			.then((response) => response.json())
 			.then((data) => {
